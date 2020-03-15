@@ -31,7 +31,7 @@ app.get('/todos', function (req, res) {
 //Lors des tests, le 'isDone' est égal à 'false' si la valeur est autre que 'true'.
 app.post('/todos', function (req, res) {
     let label = req.body.label;
-    let isDone = (req.body.isDone == 'true');
+    let isDone = (req.body.isDone == 'true'); // aide ici : https://stackoverflow.com/questions/263965/how-can-i-convert-a-string-to-boolean-in-javascript
     connection.query('Insert into todos(label, isDone) values (?,?);', [label, isDone], function (error, results) {
         if (error) throw error;
         console.log("Données ajoutées !");
