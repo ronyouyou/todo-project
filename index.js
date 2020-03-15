@@ -28,6 +28,7 @@ app.get('/todos', function (req, res) {
     });
 });
 
+//Lors des tests, le 'isDone' est égal à 'false' si la valeur est autre que 'true'.
 app.post('/todos', function (req, res) {
     let label = req.body.label;
     let isDone = (req.body.isDone == 'true');
@@ -37,6 +38,7 @@ app.post('/todos', function (req, res) {
     })
 });
 
+//Lors des tests, le 'isDone' est égal à 'false' si la valeur est autre que 'true'.
 app.put('/todos/:id', function (req, res) {
     let id = req.params.id;
     let label = req.body.label;
