@@ -12,19 +12,21 @@ Pour cloner le projet, ouvrir une invite de commande Docker et saisir les comman
 3°) docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=rtlry -d mysql:5 
 
 Cette 3ème commande permet de démarrer une instance mysql.
+
 Infos sur les options principales de la commande :
-	-p permet de préciser un mappage sur un port
-	--name permet de donner un nom à notre container
-	-d permet de lancer le container en 'tâche de fond'
+- -p permet de préciser un mappage sur un port
+- --name permet de donner un nom à notre container
+- -d permet de lancer le container en 'tâche de fond'
 	
 4°) docker run --name phpmyadmin --link mysql:db -d -p 3333:80 phpmyadmin/phpmyadmin
 
 Cette 4ème commande permet de démarrer une instance phpmyadmin.
+
 Infos sur les options principales de la commande :
-	-p permet de préciser un mappage sur un port
-	--name permet de donner un nom à notre container
-	-d permet de lancer le container en 'tâche de fond'
-	--link permet de lier le container avec celui de mysql créé avant.
+- -p permet de préciser un mappage sur un port
+- --name permet de donner un nom à notre container
+- -d permet de lancer le container en 'tâche de fond'
+- --link permet de lier le container avec celui de mysql créé avant.
 
 
 5°) docker run -it --rm -p 8081:3000 -v $PWD:/todo-project --link mysql:db node:12 bash
