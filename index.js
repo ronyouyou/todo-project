@@ -36,7 +36,7 @@ app.post('/todos', function (req, res) {
         if (error) throw error;
         console.log("Données ajoutées !");
         res.redirect('/todos');
-    })
+    });
 });
 
 //Lors des tests, le 'isDone' est égal à 'false' si la valeur est autre que 'true'.
@@ -47,7 +47,6 @@ app.put('/todos/:id', function (req, res) {
     connection.query('Update todos set label = ? , isDone = ? where id = ?;', [label, isDone, id], function (error, results) {
         if (error) throw error;
         console.log("Données modifiées !");
-        res.redirect('/todos');
     });
 });
 
