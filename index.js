@@ -35,6 +35,7 @@ app.post('/todos', function (req, res) {
     connection.query('Insert into todos(label, isDone) values (?,?);', [label, isDone], function (error, results) {
         if (error) throw error;
         console.log("Données ajoutées !");
+        res.redirect('/todos');
     })
 });
 
