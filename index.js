@@ -55,7 +55,6 @@ app.delete('/todos/:id', function (req, res) {
     connection.query('Delete from todos where id =?;', [id], function (error, results) {
         if (error) throw error;
         console.log("Données supprimées !");
-        res.redirect('/todos');
     });
 });
 
